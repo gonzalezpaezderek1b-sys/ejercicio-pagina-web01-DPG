@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Animales en peligro</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    text-align: center;
+}
+
+/* ENCABEZADO */
+header {
+    padding: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    background: rgba(0,0,0,0.3);
+}
+
+/* CARRUSEL */
+.carousel {
+    width: 400px;
+    height: 250px;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+/* TARJETAS */
+.card {
+    background: white;
+    color: black;
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* BOTONES */
+button {
+    background: #27ae60;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background: #2ecc71;
+}
+
+/* FORMULARIO */
+input {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+🌎 Animales en peligro de extinción
+</header>
+
+<!-- CARRUSEL -->
+<div class="carousel">
+    <img src="https://cdn.pixabay.com/photo/2021/09/25/06/42/panda-6654167_640.jpg" class="slide">
+    <img src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg" class="slide">
+    <img src="https://images.pexels.com/photos/66898/elephant-cub-tsavo-kenya-66898.jpeg" class="slide">
+</div>
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlides() {
+    slides.forEach((img) => img.style.display = "none");
+
+    index++;
+    if (index > slides.length) index = 1;
+
+    slides[index - 1].style.display = "block";
+
+    setTimeout(showSlides, 2000);
+}
+
+showSlides();
+</script>
+<!-- TEXTO OCULTO -->
+<div class="card">
+<details>
+<summary><b>¿Qué es la extinción?</b></summary>
+<p>La extinción ocurre cuando una especie desaparece completamente del planeta debido a causas naturales o humanas.</p>
+</details>
+</div>
+
+<!-- VIDEO -->
+<div class="card">
+<video width="100%" height="250" controls>
+    <source src="video.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+</div>
+
+<!-- BOTONES -->
+<a href="mamiferos.html"><button>Ver Mamíferos 🐯</button></a>
+<a href="aves.html"><button>Ver Aves 🦜</button></a>
+
+<!-- FORMULARIO -->
+<div class="card">
+<h3>Tu opinión</h3>
+<form>
+¿Te interesa cuidar el medio ambiente?<br>
+<input type="text"><br>
+
+¿Te gustó la página?<br>
+<input type="text">
+</form>
+</div>
+
+<!-- LINK -->
+<p>
+<a href="https://www.nationalgeographicla.com/animales" target="_blank" style="color:white;">
+Más información aquí 🌐
+</a>
+</p>
+
+<footer>
+Esta información fue elaborada con fines académicos, las imágenes y videos son responsabilidad de los propietarios.
+</footer>
+
+</body>
+</html>
